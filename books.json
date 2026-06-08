@@ -1,0 +1,14 @@
+[
+  {
+    "title": "harry potter",
+    "author": "J.K. Rowling",
+    "available": true,
+    "content": "Harry Potter is a fantasy novel about a young wizard who discovers his magical powers."
+  },
+  {
+    "title": "python programming",
+    "author": "John Zelle",
+    "available": true,
+    "content": "Python Programming teaches basics of Python language, loops, functions and OOP."
+  }
+]
