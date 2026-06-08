@@ -1,10 +1,15 @@
+import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, MessageHandler, ContextTypes, filters
+from dotenv import load_dotenv
+
+# ---------------- LOAD ENV ----------------
+load_dotenv()
+TOKEN = os.getenv("TOKEN")
 
 print("working")
 
-TOKEN = "8660373411:AAHyea3qQqMn7i1V_TrzPaTPc4zV_z_CH1I"
-
+# ---------------- BOOK DATA ----------------
 books = {
     "harry potter": {
         "status": "Available ✅",
@@ -24,6 +29,7 @@ books = {
     }
 }
 
+# ---------------- BOT LOGIC ----------------
 async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = update.message.text.lower().strip()
     msg = " ".join(msg.split())
@@ -61,8 +67,7 @@ async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "📖 Book Commands:\n"
             "👉 open <book name>\n"
             "👉 issue <book name>\n"
-            "👉 return <book name>\n\n"
-           
+            "👉 return <book name>\n"
         )
         return
 
@@ -73,7 +78,7 @@ async def reply(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "Built using Python + Telegram Bot API\n\n"
             "Features:\n"
             "✔ View books\n"
-            "✔ Read book content\n"
+            "✔ Read content\n"
             "✔ Issue & Return system (demo)"
         )
         return
